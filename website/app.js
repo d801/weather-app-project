@@ -16,11 +16,11 @@ function performAction(e){
 //Take user input
 const fav = document.getElementById('feelings').value;
 const city = document.getElementById('zip').value;
-getAnimal(baseURL ,city , apiKey)
+getData(baseURL ,city , apiKey)
 .then (function(data) {
 	// body...
 	console.log(data)
-	postData('/addAnimal' ,{temperature:data.main.temp ,date:newDate, fav:fav} )
+	postData('/addData' ,{temperature:data.main.temp ,date:newDate, fav:fav} )
 	updateUI()
 })
 }
@@ -52,7 +52,7 @@ const postData = async(url='' , data={})=>{
 }
 
 
-const getAnimal = async(baseURL ,city , apiKey)=>{
+const getData = async(baseURL ,city , apiKey)=>{
 	const res = await fetch(baseURL+city+apiKey)
 	try{
 		const data = await res.json();
