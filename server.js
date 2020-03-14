@@ -27,8 +27,8 @@ const server = app.listen(port , ()=>{console.log(`the server running on localho
 
 
 //const animalData = [];
-app.get('/all' , getData)
-function getData(req , res) {
+app.get('/all' , getTheData)
+function getTheData(req , res) {
 	// body...
 	res.send(projectData);
 	console.log(projectData);
@@ -36,8 +36,8 @@ function getData(req , res) {
 
 
 //POST function
-app.post('/addAnimal' ,addAnimal);
-function addAnimal (req,res) {
+app.post('/addData' ,addData);
+function addData (req,res) {
 	// body...
 	newEntry = {
 		temperature: req.body.temperature,
